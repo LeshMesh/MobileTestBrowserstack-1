@@ -14,8 +14,9 @@ import static io.qameta.allure.Allure.step;
 public class AndroidSelenideTestsHomework extends TestBase {
     @Test
     void searchTest() {
+        step("Pass welcome", () ->
+                $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click());
         step("Type search", () -> {
-            $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
             $(MobileBy.AccessibilityId("Search Wikipedia")).click();
             $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
         });
